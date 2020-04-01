@@ -1,12 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4cf37132-0777-459c-afec-ffcff34a311f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Navigation/MainNavigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screen/HomeScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screen/ProfileScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screen/RacingScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Zwz2vRYzEbq6rF1p9krIp5EwQ2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RunManager">
+    <configuration name="android" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="android" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.android" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4cf37132-0777-459c-afec-ffcff34a311f" name="Default Changelist" comment="" />
+      <created>1585764740902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585764740902</updated>
+      <workItem from="1585764742129" duration="4330000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1830" height="294" key="GridCell.Tab.0.bottom" timestamp="1585767657990">
+      <screen x="67" y="27" width="1853" height="1173" />
+    </state>
+    <state width="1830" height="294" key="GridCell.Tab.0.bottom/67.27.1853.1173@67.27.1853.1173" timestamp="1585767657990" />
+    <state width="1830" height="294" key="GridCell.Tab.0.center" timestamp="1585767657989">
+      <screen x="67" y="27" width="1853" height="1173" />
+    </state>
+    <state width="1830" height="294" key="GridCell.Tab.0.center/67.27.1853.1173@67.27.1853.1173" timestamp="1585767657989" />
+    <state width="1830" height="294" key="GridCell.Tab.0.left" timestamp="1585767657989">
+      <screen x="67" y="27" width="1853" height="1173" />
+    </state>
+    <state width="1830" height="294" key="GridCell.Tab.0.left/67.27.1853.1173@67.27.1853.1173" timestamp="1585767657989" />
+    <state width="1830" height="294" key="GridCell.Tab.0.right" timestamp="1585767657989">
+      <screen x="67" y="27" width="1853" height="1173" />
+    </state>
+    <state width="1830" height="294" key="GridCell.Tab.0.right/67.27.1853.1173@67.27.1853.1173" timestamp="1585767657989" />
   </component>
 </project>
