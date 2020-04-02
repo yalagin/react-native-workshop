@@ -3,6 +3,7 @@ import {FlatList, ActivityIndicator, Button, View, Text, StyleSheet} from 'react
 import {useSelector, useDispatch} from 'react-redux';
 import * as driversActions from '../store/actions/drivers';
 import Colors from "../constans/Colors";
+import DriverItem from "../components/drivers/DriverItem";
 
 export default function HomeScreen(props) {
 
@@ -10,19 +11,20 @@ export default function HomeScreen(props) {
     const [isRefreshing, setIsRefreshing] = useState(false);
     const [error, setError] = useState();
     const drivers = useSelector(state => state.drivers.drivers);
+    const offset = useSelector(state => state.drivers.offset);
     const dispatch = useDispatch();
 
     const loadDrivers = useCallback(async () => {
         setError(null);
         setIsRefreshing(true);
         try {
-            await dispatch(driversActions.fetchDrivers());
+            await dispatch(driversActions.fetchDrivers(offset));
         } catch (err) {
             console.log(err);
             setError(err.message);
         }
         setIsRefreshing(false);
-    }, [dispatch, setIsLoading, setError]);
+    }, [dispatch, setIsLoading, setError, offset]);
 
     useEffect(() => {
         const unsubscribe = props.navigation.addListener(
@@ -30,7 +32,7 @@ export default function HomeScreen(props) {
             loadDrivers
         );
 
-        return unsubscribe ;
+        return unsubscribe;
     }, [loadDrivers]);
 
     useEffect(() => {
@@ -78,24 +80,25 @@ export default function HomeScreen(props) {
                     refreshing={isRefreshing}
                     data={drivers}
                     keyExtractor={item => item.driverId}
-                    // renderItem={itemData => (
-                    //     <PlanItems
-                    //         image={itemData.item.image}
-                    //         title={itemData.item.name}
-                    //         active={itemData.item.isCurrent}
-                    //         onSelect={() => {
-                    //             dispatch(plansActions.makeActive(itemData.item.id));
-                    //         }}
-                    //     >
-                    //     </PlanItems>
-                    // )}
+                    renderItem={itemData => (
+                        <DriverItem
+                            driverId={itemData.item.driverId}
+                            permanentNumber={itemData.item.permanentNumber}
+                            url={itemData.item.url}
+                            givenName={itemData.item.givenName}
+                            familyName={itemData.item.familyName}
+                            dateOfBirth={itemData.item.dateOfBirth}
+                            nationality={itemData.item.nationality}
+                            // onSelect={() => {
+                            //     dispatch(plansActions.makeActive(itemData.item.id));
+                            // }}
+                        >
+                        </DriverItem>
+                    )}
                 />
             </View>
-
         </View>
     );
-
-
 }
 
 const styles = StyleSheet.create({
