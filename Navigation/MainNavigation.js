@@ -1,20 +1,19 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import RacersScreen from "../screen/HomeScreen";
+import HomeScreen from "../screen/HomeScreen";
+import ProfileScreen from "../screen/ProfileScreen";
+import RacingScreen from "../screen/RacingScreen";
 
 const Stack = createStackNavigator();
 
-function MyStack() {
+export default function MainNavigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen
-                    name="Racers"
-                    component={RacersScreen}
-                    options={{title: 'Racers'}}
-                />
-                {/*<Stack.Screen name="Profile" component={Profile} />*/}
+                <Stack.Screen name="Home" component={HomeScreen}/>
+                <Stack.Screen name="Profile" component={ProfileScreen}/>
+                <Stack.Screen name="Racing" component={RacingScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

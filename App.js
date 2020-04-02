@@ -1,22 +1,20 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from "./screen/HomeScreen";
-import ProfileScreen from "./screen/ProfileScreen";
-import RacingScreen from "./screen/RacingScreen";
+import {createStore, applyMiddleware, combineReducers, compose, Store} from 'redux';
+import ReduxThunk from 'redux-thunk';
+import {Provider} from 'react-redux';
+import MainNavigation from "./Navigation/MainNavigation";
+import drivers from "./store/reducers/drivers"
 
-
-const Stack = createStackNavigator();
+const rootReducer = combineReducers({
+    drivers
+});
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 function App() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomeScreen}/>
-                <Stack.Screen name="Profile" component={ProfileScreen}/>
-                <Stack.Screen name="Racing" component={RacingScreen}/>
-            </Stack.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+           <MainNavigation/>
+        </Provider>
     );
 }
 
