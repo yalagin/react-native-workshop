@@ -4,9 +4,11 @@ import ReduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import MainNavigation from "./Navigation/MainNavigation";
 import drivers from "./store/reducers/drivers"
+import racing from "./store/reducers/racing"
 
 const rootReducer = combineReducers({
-    drivers
+    drivers,
+    racing
 });
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 

@@ -5,25 +5,31 @@ import Card from '../UI/Card';
 import Colors from "../../constans/Colors";
 
 const DriverItem = props => {
+    const [showDetails, setShowDetails] = useState(false);
 
+    const hidden = <><Text style={styles.item}>Family name: {props.familyName}</Text>
+        <Text style={styles.link} numberOfLines={3} onPress={() => {
+            Linking.openURL(props.url)
+        }}>{props.url}</Text>
+        <Text style={styles.item}>{props.dateOfBirth}</Text>
+        <Text style={styles.item}>{props.nationality}</Text>
+        <Text style={styles.item}>{props.permanentNumber}</Text><Button
+            color={Colors.primary}
+            title={'Show Details'}
+            onPress={() => {
+                props.onSelect();
+            }}
+        /></>;
 
     return (
         <Card style={styles.driverItem}>
             <View style={styles.summary}>
-                <Text style={styles.item}>Name: {props.givenName}</Text>
-                <Text style={styles.item}>Family name: {props.familyName}</Text>
-                <Text style={styles.link} numberOfLines={3} onPress={()=>{Linking.openURL(props.url)}}>{props.url}</Text>
-                <Text style={styles.item}>{props.dateOfBirth}</Text>
-                <Text style={styles.item}>{props.nationality}</Text>
-                <Text style={styles.item}>{props.permanentNumber}</Text>
+                <Text style={styles.item} onPress={() => {
+                    setShowDetails(prevState => !prevState);
+                }}>Name: {props.givenName}</Text>
+                {showDetails && (hidden)}
             </View>
-            <Button
-                color={Colors.primary}
-                title={'Show Details'}
-                onPress={() => {
-                    // setShowDetails(prevState => !prevState);
-                }}
-            />
+
         </Card>
     );
 };

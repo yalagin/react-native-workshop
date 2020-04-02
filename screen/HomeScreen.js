@@ -2,6 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {FlatList, ActivityIndicator, Button, View, Text, StyleSheet} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import * as driversActions from '../store/actions/drivers';
+import * as racingActions from '../store/actions/racing';
 import Colors from "../constans/Colors";
 import DriverItem from "../components/drivers/DriverItem";
 
@@ -9,7 +10,7 @@ export default function HomeScreen(props) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [isRefreshing, setIsRefreshing] = useState(false);
-    const [error, setError] = useState();
+    const [error, setError] = useState(false);
     const drivers = useSelector(state => state.drivers.drivers);
     const offset = useSelector(state => state.drivers.offset);
     const dispatch = useDispatch();
@@ -89,9 +90,12 @@ export default function HomeScreen(props) {
                             familyName={itemData.item.familyName}
                             dateOfBirth={itemData.item.dateOfBirth}
                             nationality={itemData.item.nationality}
-                            // onSelect={() => {
-                            //     dispatch(plansActions.makeActive(itemData.item.id));
-                            // }}
+                            onSelect={() => {
+                                dispatch(racingActions.reset());
+                                props.navigation.navigate("Racing", {
+                                    driverId: itemData.item.driverId,
+                                });
+                            }}
                         >
                         </DriverItem>
                     )}
