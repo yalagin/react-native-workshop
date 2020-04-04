@@ -19,7 +19,7 @@ export default function MainNavigation() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Home" component={HomeScreen} options={{
-                    title: 'Racers',
+                    title: 'Home',
                     headerRight: () => (
                         <HeaderButtons HeaderButtonComponent={HeaderButton} title='Racers'>
                             <Item
@@ -39,7 +39,7 @@ export default function MainNavigation() {
                         </HeaderButtons>
                     )
                 }}/>
-                <Stack.Screen name="Racing" component={RacingScreen}options={{
+                <Stack.Screen name="Racers" component={RacingScreen}options={{
                     title: 'Racers',
                     headerRight: () => (
                         <HeaderButtons HeaderButtonComponent={HeaderButton} title='Racers'>
